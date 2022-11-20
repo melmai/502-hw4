@@ -7,6 +7,7 @@ class Shape(metaclass=ABCMeta):
         self.name = name
 
     def __str__(self):
+        """Returns a string representation of the current shape."""
         return f"{self.name}, area: {self.area()}, perimeter: {self.perimeter()}"
 
     @property
