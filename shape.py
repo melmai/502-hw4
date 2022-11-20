@@ -1,7 +1,7 @@
-from abc import ABC, abstractmethod
+from abc import ABCMeta, abstractmethod
 
 
-class Shape(ABC):
+class Shape(metaclass=ABCMeta):
 
     def __init__(self, name):
         self.name = name
