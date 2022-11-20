@@ -1,29 +1,29 @@
-from abc import ABC, abstractmethod
+from abc import ABCMeta, abstractmethod
 
 
-class Shape(ABC):
+class Shape(metaclass=ABCMeta):
 
     def __init__(self, name):
-        self.name_of_shape = name
+        self.name = name
 
     def __str__(self):
-        pass
+        """Returns a string representation of the current shape."""
+        return f"{self.name}, area: {self.area()}, perimeter: {self.perimeter()}"
 
-    def get_name(self):
-        return self.name_of_shape
-
-    def set_name(self, name):
-        self.name_of_shape = name
-
-    name = property(get_name, set_name)
+    @property
+    def name(self):
+        """Get the name of the current shape."""
+        return self.name
 
     @abstractmethod
     def area(self):
-        pass
+        """Get the area of the current shape."""
 
     @abstractmethod
     def perimeter(self):
-        pass
+        """Get the perimeter of the current shape."""
 
+    @abstractmethod
     def draw(self):
-        pass
+        """Prints the name of the shape followed by the area and perimeter of the shape."""
+        print(self)
