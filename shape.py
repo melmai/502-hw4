@@ -25,5 +25,8 @@ class Shape(ABC):
     def perimeter(self):
         pass
 
+    @abstractmethod
     def draw(self):
-        pass
+        """Prints the name of the shape followed by the area and perimeter of the shape"""
+        print(
+            f"{self.name_of_shape}, area: {self.area()}, perimeter: {self.perimeter()}")
