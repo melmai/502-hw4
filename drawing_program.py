@@ -1,4 +1,3 @@
-
 class DrawingProgram:
 
     def __init__(self):
@@ -7,7 +6,10 @@ class DrawingProgram:
     def __str__(self):
         """returns a string representation of each of the shapes --
         each shape will be separated from others by a newline (\n)"""
-        pass
+        ret_string = ""
+        for shape in self.list_of_shapes:
+            ret_string += shape
+        return ret_string
 
     def add_shape(self, shape):
         """A method that adds a Shape"""
@@ -17,10 +19,18 @@ class DrawingProgram:
         """A method that removes ALL shapes that match the one passed as a parameter --
         it should return in integer value to signify how many of that shape was removed"""
         shape_count = 0
+        shape_count_track = 0
         for shapes in self.list_of_shapes:
-            if shapes == shape:
-                self.list_of_shapes.remove()
-                shape_count += 1
+            if shapes.name == shape.name:
+                shape_count_track += 1
+        try:
+            while shape_count < shape_count_track:
+                for shapes in self.list_of_shapes:
+                    if shapes.name == shape.name:
+                        self.list_of_shapes.remove(shapes)
+                        shape_count += 1
+        except ValueError:
+            pass
         return shape_count
 
     def print_shape(self, shape):
