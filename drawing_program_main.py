@@ -3,6 +3,8 @@ from shape_factory import ShapeFactory
 from circle import Circle
 from square import Square
 
+#code I was using to test remove shape
+
 my_shapes = DrawingProgram()
 for i in range(0, 10):
     my_shapes.add_shape(ShapeFactory.create_shape("Square", 2.0))
