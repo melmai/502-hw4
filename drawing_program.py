@@ -8,7 +8,8 @@ class DrawingProgram:
         each shape will be separated from others by a newline (\n)"""
         ret_string = ""
         for shape in self.list_of_shapes:
-            ret_string += shape
+            ret_string += str(shape)
+            ret_string += "\n"
         return ret_string
 
     def add_shape(self, shape):
@@ -33,9 +34,11 @@ class DrawingProgram:
             pass
         return shape_count
 
-    def print_shape(self, shape):
+    def print_shape(self, shape_name):
         """prints all shapes that match the type of the shape passed in"""
-        pass
+        for shape in self.list_of_shapes:
+            if shape.name == shape_name:
+                print(shape)
 
     def sort_shapes(self):
         """sorts the list/collection of shapes -- you must use a sort that runs in O(nlogn) 
@@ -49,6 +52,9 @@ class DrawingProgram:
     def set_shape(self, index, shape):
         """replaces the shape at the specified index"""
         self.list_of_shapes[index] = shape
+    
+    def get_size(self):
+        return len(self.list_of_shapes)
 
 
 class drawingProgramIterator:
