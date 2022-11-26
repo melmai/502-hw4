@@ -2,9 +2,10 @@ from abc import ABCMeta, abstractmethod
 
 
 class Shape(metaclass=ABCMeta):
+    """Shape is an abstract base class which other shapes can extend."""
 
     def __init__(self, name):
-        self.name = name
+        self._name = name
 
     def __str__(self):
         """Returns a string representation of the current shape."""
@@ -18,12 +19,10 @@ class Shape(metaclass=ABCMeta):
     @abstractmethod
     def area(self):
         """Get the area of the current shape."""
-        pass
 
     @abstractmethod
     def perimeter(self):
         """Get the perimeter of the current shape."""
-        pass
 
     @abstractmethod
     def draw(self):
