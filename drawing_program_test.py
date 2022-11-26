@@ -56,9 +56,11 @@ def test_drawing_program():
 
     # remove all circles
     print("Removing all circles from drawing program...")
-    drawing_program.remove_shape("Circle")
+    drawing_program.remove_shape(circle)
 
-    print("Circles removed.")
+    print("Circles removed.\n")
+    
+    print("Updated shapes in drawing program:")
     print(drawing_program)
 
 
