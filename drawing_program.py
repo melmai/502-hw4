@@ -40,6 +40,23 @@ class DrawingProgram:
         """replaces the shape at the specified index"""
         self.list_of_shapes[index] = shape
 
+    def __iter__(self):
+        return drawingProgramIterator(self)
+
 
 class drawingProgramIterator:
-    pass
+    """ Iterator class """
+    def __init__(self, collection):
+        self.collection = collection
+        self.index = 0
+
+    def __next__(self):
+        """Returns the next value from DrawingProgram object's lists of shapes"""
+        if self.index < len(self.collection.list_of_shapes):
+            result = self.collection.list_of_shapes[self.index]
+            self.index += 1
+            return result
+        else:
+            raise StopIteration
+
+

@@ -5,9 +5,7 @@ class ShapeFactory:
     def create_shape(self, shape_name, shape_data):
         pass
 
-    """
-    
-    def create_circle(self):
+    def create_circle(self, name, radius):
         pass
     
     def create_square(self):
@@ -19,4 +17,4 @@ class ShapeFactory:
     def create_triangle(self):
         pass
     
-    """
+
