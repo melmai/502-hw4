@@ -14,7 +14,7 @@ class Shape(metaclass=ABCMeta):
     @property
     def name(self):
         """Returns name of current shape."""
-        return self.name
+        return self._name
 
     @abstractmethod
     def area(self):
@@ -28,3 +28,5 @@ class Shape(metaclass=ABCMeta):
     def draw(self):
         """Prints the name of the shape followed by the area and perimeter of the shape."""
         print(self)
+
+
