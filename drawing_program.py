@@ -117,10 +117,10 @@ class DrawingProgram:
         return len(self.list_of_shapes)
 
     def __iter__(self):
-        return drawingProgramIterator(self)
+        return DrawingProgramIterator(self)
 
 
-class drawingProgramIterator:
+class DrawingProgramIterator:
     """ Iterator class """
     def __init__(self, collection):
         self.collection = collection
