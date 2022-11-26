@@ -41,9 +41,75 @@ class DrawingProgram:
                 print(shape)
 
     def sort_shapes(self):
-        """sorts the list/collection of shapes -- you must use a sort that runs in O(nlogn) 
+        """sorts the list/collection of shapes -- you must use a sort that runs in O(nlogn)
         for its worst case shapes will be sorted first by name, then by area if names are same"""
-        pass
+
+        # if there are fewer than 2 shapes, there's nothing to sort
+        # otherwise, use merge sort to sort the list
+        if self.get_size() > 2:
+            self.list_of_shapes = self.merge_sort(self.list_of_shapes)
+        return
+
+    def merge_sort(self, shapes_list):
+        """ Sorts the list of shapes recursively using merge sort. """
+        if len(shapes_list) > 1:
+            new_array = shapes_list
+
+            # split the list
+            mid_idx = len(shapes_list) // 2
+            left_array = shapes_list[:mid_idx]
+            right_array = shapes_list[mid_idx:]
+
+            # call merge sort recursively
+            self.merge_sort(left_array)
+            self.merge_sort(right_array)
+
+            i = j = k = 0
+
+            # merge sorted arrays
+            while i < len(left_array) and j < len(right_array):
+
+                # check first values and add the lowest one to the new array
+                # then increment
+                if left_array[i].name == right_array[j].name:
+                    if left_array[i].area() < right_array[j].area():
+                        new_array[k] = left_array[i]
+                        i += 1
+                    else:
+                        new_array[k] = right_array[j]
+                        j += 1
+                elif left_array[i].name < right_array[j].name:
+                    new_array[k] = left_array[i]
+                    i += 1
+                else:
+                    new_array[k] = right_array[j]
+                    j += 1
+
+                # move on to the next element in the new array
+                k += 1
+
+            # add any leftover values from left array, if any exist
+            while i < len(left_array):
+                new_array[k] = left_array[i]
+                i += 1
+                k += 1
+
+            # add any leftover values from right array, if any exist
+            while j < len(right_array):
+                new_array[k] = right_array[j]
+                j += 1
+                k += 1
+
+            return new_array
+
+
+
+
+
+
+
+
+        
 
     def get_shape(self, index):
         """returns the shape at the specified index"""
