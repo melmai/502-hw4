@@ -4,7 +4,7 @@ from shape import Shape
 
 class Circle(Shape):
 
-    def __init__(self, name="Circle", radius=0.0):
+    def __init__(self, name="circle", radius=0.0):
         super().__init__(name)
         self.radius = radius
 

@@ -102,15 +102,6 @@ class DrawingProgram:
 
             return new_array
 
-
-
-
-
-
-
-
-        
-
     def get_shape(self, index):
         """returns the shape at the specified index"""
         return self.list_of_shapes[index]

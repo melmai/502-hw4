@@ -5,37 +5,19 @@ from triangle import Triangle
 
 
 class ShapeFactory:
+    """Class that will create shapes"""
 
     @staticmethod
     def create_shape(shape_name, *shape_data):
-        fix_name = shape_name.upper()
-        if fix_name == "CIRCLE":
+        """creates shapes and their dimensions based on user input"""
+        if shape_name == "circle":
             new_shape = Circle(shape_name, *shape_data)
-        elif fix_name == "SQUARE":
+        elif shape_name == "square":
             new_shape = Square(shape_name, *shape_data)
-        elif fix_name == "RECTANGLE":
+        elif shape_name == "rectangle":
             new_shape = Rectangle(shape_name, *shape_data)
-        elif fix_name == "TRIANGLE":
+        elif shape_name == "triangle":
             new_shape = Triangle(shape_name, *shape_data)
         else:
-            raise TypeError("That is not a valid shape.")
+            raise TypeError("That is not a valid shape. Please have no capital letters in the shape name.")
         return new_shape
-    # def create_shape(self, shape_name, shape_data):
-    #     pass
-    #
-    # def create_circle(self, name, radius):
-    #     pass
-    #
-    # def create_square(self):
-    #     pass
-    #
-    # def create_rectangle(self):
-    #     pass
-    #
-    # def create_triangle(self):
-    #     pass
-    #
-
-
-
-

@@ -3,7 +3,7 @@ import math
 
 
 class Triangle(Shape):
-    def __init__(self, name="Triangle", side_one=0.0, side_two=0.0, side_three=0.0):
+    def __init__(self, name="triangle", side_one=0.0, side_two=0.0, side_three=0.0):
         super().__init__(name)
         self.side_one = side_one
         self.side_two = side_two

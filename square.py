@@ -2,7 +2,7 @@ from shape import Shape
 
 class Square(Shape):
 
-    def __init__(self, name="Square", length=0):
+    def __init__(self, name="square", length=0):
         super().__init__(name)
         self.length = length
 

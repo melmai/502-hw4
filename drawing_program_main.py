@@ -16,14 +16,14 @@ class DrawingProgramMain:
             my_shapes.add_shape(ShapeFactory.create_shape("triangle", 3.0, 4.0, 5.0))
         my_shapes.add_shape(ShapeFactory.create_shape("circle", 3.0))
         print(my_shapes.get_shape(6))
-        #my_shapes.sort_shapes()
+        my_shapes.sort_shapes()
         iterator = iter(my_shapes)
         for shapes in my_shapes:
             print(shapes)
         my_shapes.add_shape(ShapeFactory.create_shape("circle", 5.0))
         my_shapes.add_shape(ShapeFactory.create_shape("rectangle", 1.0, 3.0))
         my_shapes.set_shape(2, ShapeFactory.create_shape("circle", 4.0))
-        # my_shapes.sort_shapes()
+        my_shapes.sort_shapes()
         for shapes in my_shapes:
             print(shapes)
         print(my_shapes.remove_shape(Square()))
