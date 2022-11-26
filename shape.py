@@ -31,4 +31,4 @@ class Shape(metaclass=ABCMeta):
     @abstractmethod
     def draw(self):
         """Prints the name of the shape followed by the area and perimeter of the shape."""
-        pass
+        print(self)
