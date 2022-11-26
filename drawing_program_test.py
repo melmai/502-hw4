@@ -11,20 +11,41 @@ def test_drawing_program():
     print(f"Drawing program created! Number of shapes: "
           f"{drawing_program.get_size()}\n")
 
+    # sort list of shapes (empty)
+    print("Sorting empty list...\n")
+    drawing_program.sort_shapes()
+
     # create shapes and add to drawing program
-    print("Creating 4 shapes...")
-    circle = ShapeFactory.create_shape("Circle", 2.0) 
-    rectangle = ShapeFactory.create_shape("Rectangle", 2.0, 3.0)
+    print("Creating circle shape...")
+    circle = ShapeFactory.create_shape("Circle", 2.0)
+    print("Circle created!")
+    print(circle)
+    print()
+
+    print("Adding circle to drawing program...")
+    drawing_program.add_shape(circle)
+    print("Circle added!\n")
+
+    # sort list of shapes (empty)
+    print("Sorting list of 1 shape...")
+    drawing_program.sort_shapes()
+
+    # print all shapes
+    print("All shapes in drawing program (should be just one):")
+    print(drawing_program)
+
+    # create remaining 3 shapes
+    print("Creating square, triangle, and rectangle...")
     square = ShapeFactory.create_shape("Square", 2.0)
     triangle = ShapeFactory.create_shape("Triangle", 5.0, 6.0, 7.0)
+    rectangle = ShapeFactory.create_shape("Rectangle", 2.0, 3.0)
 
-    print("Adding shapes to drawing program...")
-    drawing_program.add_shape(circle)
-    drawing_program.add_shape(rectangle)
+    print("Adding shapes to drawing program (unsorted)...")
     drawing_program.add_shape(square)
     drawing_program.add_shape(triangle)
+    drawing_program.add_shape(rectangle)
     print(
-        f"Number of shapes: {drawing_program.get_size()}\n")
+        f"Number of shapes in drawing program: {drawing_program.get_size()}\n")
 
     # print all shapes
     print("All shapes in drawing program:")
