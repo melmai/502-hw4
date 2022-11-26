@@ -54,6 +54,15 @@ def test_drawing_program():
     print(drawing_program)
     print()
 
+    # Sort shapes
+    print("Sorting shapes...\n")
+    drawing_program.sort_shapes()
+
+    # Print sorted shapes
+    print("Sorted shapes:")
+    print(drawing_program)
+    print()
+
     # remove all circles
     print("Removing all circles from drawing program...")
     drawing_program.remove_shape(circle)
