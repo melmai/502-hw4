@@ -1,8 +1,10 @@
+import math
 from shape import Shape
+
 
 class Circle(Shape):
 
-    def __init__(self, name, radius):
+    def __init__(self, name="Circle", radius=0.0):
         super().__init__(name)
         self.radius = radius
 
@@ -11,3 +13,6 @@ class Circle(Shape):
 
     def perimeter(self):
         return 2 * math.pi * self.radius
+
+    def draw(self):
+        print(self)

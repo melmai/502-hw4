@@ -2,7 +2,7 @@ from shape import Shape
 
 class Square(Shape):
 
-    def __init__(self, name, length):
+    def __init__(self, name="Square", length=0):
         super().__init__(name)
         self.length = length
 
@@ -11,3 +11,6 @@ class Square(Shape):
 
     def perimeter(self):
         return self.length * 4
+
+    def draw(self):
+        print(self)
