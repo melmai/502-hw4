@@ -17,8 +17,9 @@ class DrawingProgram:
         self.list_of_shapes.append(shape)
 
     def remove_shape(self, shape):
-        """A method that removes ALL shapes that match the one passed as a parameter --
-        it should return in integer value to signify how many of that shape was removed"""
+        """A method that removes ALL shapes that match the one passed as a
+        parameter -- it should return in integer value to signify how many
+        of that shape was removed"""
         shape_count = 0
         shape_count_track = 0
         for shapes in self.list_of_shapes:
@@ -41,8 +42,9 @@ class DrawingProgram:
                 print(shape)
 
     def sort_shapes(self):
-        """sorts the list/collection of shapes -- you must use a sort that runs in O(nlogn)
-        for its worst case shapes will be sorted first by name, then by area if names are same"""
+        """sorts the list/collection of shapes -- you must use a sort that runs
+        in O(nlogn) for its worst case shapes will be sorted first by name,
+        then by area if names are same"""
 
         # if there are fewer than 2 shapes, there's nothing to sort
         # otherwise, use merge sort to sort the list
@@ -102,15 +104,6 @@ class DrawingProgram:
 
             return new_array
 
-
-
-
-
-
-
-
-        
-
     def get_shape(self, index):
         """returns the shape at the specified index"""
         return self.list_of_shapes[index]
@@ -133,12 +126,11 @@ class drawingProgramIterator:
         self.index = 0
 
     def __next__(self):
-        """Returns the next value from DrawingProgram object's lists of shapes"""
+        """Returns the next value from DrawingProgram object's lists of
+        shapes"""
         if self.index < len(self.collection.list_of_shapes):
             result = self.collection.list_of_shapes[self.index]
             self.index += 1
             return result
         else:
             raise StopIteration
-
-
