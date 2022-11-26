@@ -1,4 +1,6 @@
 class DrawingProgram:
+    """This class creates a DrawingProgram object that holds a list of
+    shapes."""
 
     def __init__(self):
         self.list_of_shapes = []
