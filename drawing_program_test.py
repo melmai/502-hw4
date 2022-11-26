@@ -7,7 +7,8 @@ def test_drawing_program():
     print("Creating drawing program...")
     drawing_program = DrawingProgram()
     
-    print(f"Drawing program created! Number of shapes: {drawing_program.get_size()}\n")
+    print(f"Drawing program created! Number of shapes: "
+          f"{drawing_program.get_size()}\n")
 
     # create shapes and add to drawing program
     print("Creating 4 shapes...")
@@ -41,18 +42,19 @@ def test_drawing_program():
     # Print sorted shapes
     print("Sorted shapes:")
     print(drawing_program)
-    print()
 
     # replace shape
     print("Creating new circle shape...")
     new_circle = ShapeFactory.create_shape("Circle", 5.0)
+    print("Circle created!")
+    print(new_circle)
+    print()
 
     print("Replacing last shape...\n")
     drawing_program.set_shape(3, new_circle)
 
-    print("New shape order:")
+    print("New shape list:")
     print(drawing_program)
-    print()
 
     # Sort shapes
     print("Sorting shapes...\n")
@@ -61,14 +63,18 @@ def test_drawing_program():
     # Print sorted shapes
     print("Sorted shapes:")
     print(drawing_program)
-    print()
 
-    # remove all circles
-    print("Removing all circles from drawing program...")
-    drawing_program.remove_shape(circle)
-
-    print("Circles removed.\n")
+    # remove square shape
+    print("Removing square from drawing program...")
+    print(f"{drawing_program.remove_shape(square)} square removed.\n")
     
+    print("Updated shapes in drawing program:")
+    print(drawing_program)
+
+    # remove circle shape type
+    print("Removing all circles from drawing program...")
+    print(f"{drawing_program.remove_shape_type('Circle')} circles removed.\n")
+
     print("Updated shapes in drawing program:")
     print(drawing_program)
 

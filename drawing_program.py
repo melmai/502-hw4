@@ -25,12 +25,31 @@ class DrawingProgram:
         shape_count = 0
         shape_count_track = 0
         for shapes in self.list_of_shapes:
-            if shapes.name == shape.name:
+            if shapes == shape:
                 shape_count_track += 1
         try:
             while shape_count < shape_count_track:
                 for shapes in self.list_of_shapes:
-                    if shapes.name == shape.name:
+                    if shapes == shape:
+                        self.list_of_shapes.remove(shapes)
+                        shape_count += 1
+        except ValueError:
+            pass
+        return shape_count
+
+    def remove_shape_type(self, shape_type):
+        """A method that removes ALL shape types that match the one passed as a
+        parameter -- it should return in integer value to signify how many
+        of that shape type was removed"""
+        shape_count = 0
+        shape_count_track = 0
+        for shapes in self.list_of_shapes:
+            if shapes.name == shape_type:
+                shape_count_track += 1
+        try:
+            while shape_count < shape_count_track:
+                for shapes in self.list_of_shapes:
+                    if shapes.name == shape_type:
                         self.list_of_shapes.remove(shapes)
                         shape_count += 1
         except ValueError:
