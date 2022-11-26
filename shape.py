@@ -11,12 +11,9 @@ class Shape(metaclass=ABCMeta):
         return f"{self.name}, area: {self.area()}, perimeter: {self.perimeter()}"
 
     @property
-    def get_name(self):
+    def name(self):
+        """Returns name of current shape."""
         return self.name
-
-    @property
-    def set_name(self, name):
-        self.name = name
 
     @abstractmethod
     def area(self):
